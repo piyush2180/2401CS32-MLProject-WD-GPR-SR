@@ -7,25 +7,36 @@ This project estimates the state of health (SOH) of lithium ion cells that the m
 
 ## What is in this repository
 
-| Path | What it is |
+| File | What it is |
 |---|---|
-| `2401CS32_MLProject.ipynb` | The full notebook, with the outputs of the final Colab run |
+| `2401CS32_MLProject.py` | The full project as a plain Python script |
+| `2401CS32_MLProject.ipynb` | The same code as a notebook, with the outputs of the final run |
 | `requirements.txt` | Library versions used for the final run |
 
 The report and poster are submitted separately.
 
 ## How to run it
 
-1. Open `2401CS32_MLProject.ipynb` in Google Colab (a CPU runtime is enough).
-2. Run all cells. The notebook installs the few missing packages, downloads the public data by itself and writes tables to `results/` and plots to `results/figures/`.
-3. The full run takes about 2.7 hours on a Colab CPU. Setting `PBL_QUICK=1` runs a short version that only checks the code works.
+```
+pip install -r requirements.txt
+python 2401CS32_MLProject.py
+```
+
+The script downloads the public data by itself into `data/`, writes result tables to `results/` and figures to `results/figures/`. The full run takes about 2.7 hours on a 2 core CPU. For a quick check that everything works (one seed, few training steps), run it with `PBL_QUICK=1`:
+
+```
+PBL_QUICK=1 python 2401CS32_MLProject.py      (Linux / macOS)
+set PBL_QUICK=1 && python 2401CS32_MLProject.py   (Windows cmd)
+```
+
+Quick mode is only a code check; all reported numbers come from the full run. The notebook can also be opened in Google Colab and run with Runtime, Run all.
 
 ## Data
 
-Both datasets are public and are downloaded inside the notebook.
+Both datasets are public and are downloaded by the code, so nothing has to be downloaded by hand.
 
-* NASA Ames PCoE Li ion Battery Aging data, cells B0005, B0006, B0007 and B0018: https://data.nasa.gov/dataset/li-ion-battery-aging-datasets
-* CALCE battery data, University of Maryland, cells CS2_35 to CS2_38 and CX2_34, 36, 37 and 38: https://web.calce.umd.edu/batteries/data/
+* **NASA Ames PCoE Li ion Battery Aging data**, cells B0005, B0006, B0007 and B0018 (Saha and Goebel, 2007). The code downloads the files from NASA's PCoE data mirror: https://phm-datasets.s3.amazonaws.com/NASA/5.+Battery+Data+Set.zip (listed on the PCoE data repository page, https://www.nasa.gov/intelligent-systems-division/discovery-and-systems-health/pcoe/pcoe-data-set-repository/). The data.nasa.gov page for this dataset (https://data.nasa.gov/dataset/li-ion-battery-aging-datasets) only holds the description and says "This dataset has no data"; the files themselves are at the link above.
+* **CALCE battery data**, University of Maryland, cells CS2_35 to CS2_38 and CX2_34, 36, 37 and 38 (He et al., 2011): https://web.calce.umd.edu/batteries/data/
 
 ## Main results (unseen cells, leave one cell out, 3 seeds)
 
