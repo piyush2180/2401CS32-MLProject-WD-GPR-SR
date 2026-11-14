@@ -1,0 +1,11 @@
+data/
+results/
+__pycache__/
+.ipynb_checkpoints/
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.loa
