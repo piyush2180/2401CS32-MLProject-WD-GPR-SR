@@ -12,8 +12,14 @@ This project estimates the state of health (SOH) of lithium ion cells that the m
 | `2401CS32_MLProject.py` | The full project as a plain Python script |
 | `2401CS32_MLProject.ipynb` | The same code as a notebook, with the outputs of the final run |
 | `requirements.txt` | Library versions used for the final run |
+| `poster/2401CS32_MLProject_poster.pptx` | The poster (PowerPoint; also opens in Google Slides or Keynote) |
+| `poster/2401CS32_MLProject_poster.pdf` | The poster as a PDF |
+| `poster/WD-GPR-SR_architecture.drawio` | The architecture diagram, made in draw.io (diagrams.net) |
+| `poster/WD-GPR-SR_architecture.png`, `.svg` | The diagram exported from draw.io |
 
-The report and poster are submitted separately.
+Open the architecture diagram in draw.io: https://app.diagrams.net/#Uhttps%3A%2F%2Fraw.githubusercontent.com%2Fpiyush2180%2F2401CS32-MLProject-WD-GPR-SR%2Fmain%2Fposter%2FWD-GPR-SR_architecture.drawio
+
+The report is submitted separately.
 
 ## How to run it
 
